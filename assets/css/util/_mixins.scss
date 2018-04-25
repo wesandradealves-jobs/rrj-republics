@@ -1,0 +1,66 @@
+@mixin transition($tempo) {
+    -webkit-transition: all linear $tempo;
+    -moz-transition: all linear $tempo;
+    -ms-transition: all linear $tempo;
+    -o-transition: all linear $tempo;
+    transition: all linear $tempo;
+}
+
+@mixin height($tempo) {
+    -webkit-transition: max-height $tempo;
+    -moz-transition: max-height $tempo;
+    -ms-transition: max-height $tempo;
+    -o-transition: max-height $tempo;
+    transition: max-height $tempo;
+}
+
+@mixin border($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+@mixin shadow($val1, $val2, $val3, $val4, $cor) {
+    -webkit-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    -moz-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    -ms-box-shadow: $val1 $val2 $val3 $val4 $cor;
+    box-shadow: $val1 $val2 $val3 $val4 $cor;
+}
+
+@mixin background($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -ms-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+} 
+
+@mixin flex-flow($flow) {
+    flex-flow: $flow nowrap;
+    -webkit-flex-flow: $flow nowrap;
+    -ms-flex-flow: $flow nowrap;
+}
+
+@mixin flex-width($width){
+  -webkit-flex: 0 $width;                
+  -ms-flex: 0 $width;                    
+  flex: 0 $width; 
+}
+
+@mixin align-items($align) {
+    align-items: $align;     
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+}
+
+@mixin scale($size){
+  -webkit-transform: scale($size);  
+      -ms-transform: scale($size);  
+          transform: scale($size);    
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
